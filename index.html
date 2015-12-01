@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>
-    </title>
-    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
-    <link rel="stylesheet" type="text/css" href="styles/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="styles/index.css">
 
-  </head>
+<head>
+  <title>
+  </title>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+  <link rel="stylesheet" type="text/css" href="styles/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="styles/index.css">
+</head>
 
-  <body>
+<body>
+  <main class="container">
+    <header>
+      <h1>
+        Pat's Blog
+      </h1>
+      <nav>
+        <ul>
+          <li>About</li>
+          <li>Portfolio</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+    <article id="template">
+      <h3 class="title"></h3>
+      <p class="info">By
+      <a href="" class="authorUrl">
+      <span id="author"></span></a>, published about
+      <span id="days"></span> days ago.</p>
+      <p class="body"></p>
+      <hr>
+    </article>
+  </main>
+  <footer>
+  </footer>
+  <script src="scripts/jquery-1.11.3.min.js"></script>
+  <script src="scripts/articles.js"></script>
+  <script src="scripts/blog.js"></script>
+  <script src="scripts/blogArticles.js"></script>
+  <!-- <script src="scripts/index.js"></script> -->
+</body>
 
-    <main class="container">
-      <header>
-        <h1>
-          Pat Yau's Blog
-        </h1>
-        <nav>
-        </nav>
-      </header>
-        <article id="template">
-          <h3 class="title"></h3>
-          <p class="info">By
-          <a href="" class="authorUrl">
-          <span class="author"></span></a>, published about
-          <span class="days"></span> days ago.
-          <p class="body"></p>
-          <hr>
-        </article>
-
-    </main>
-    <footer>
-    </footer>
-    <script src="scripts/jquery-1.11.3.min.js"></script>
-    <script src="scripts/blog.js"></script>
-    <script src="scripts/blogArticles.js"></script>
-    <script src="scripts/articles.js"></script>
-    <script src="scripts/index.js"></script>
-  </body>
 </html>
