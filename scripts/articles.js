@@ -7,6 +7,10 @@ var Article = function(props) {
   this.days = Date.parse(props.publishedOn);
 };
 
+Article.prototype.daysAgo = function() {
+  
+};
+
 Article.prototype.toHTML = function() {
   var $articleCopy = $('article').first().clone();
   $articleCopy.find('.title').html(this.title);
