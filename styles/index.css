@@ -1,5 +1,10 @@
+body {
+  font-family: Verdana;
+}
+
 img {
-  float: left;
+  display: block;
+  max-width: 960px;
 }
 
 .info {
