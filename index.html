@@ -12,16 +12,20 @@
 <body>
   <main class="container">
     <header>
+
       <h1>
         Pat's Blog
       </h1>
+
+      <div class="container">
       <nav>
         <ul>
-          <li>About</li>
-          <li>Portfolio</li>
-          <li>Contact</li>
+          <li class="tab" data-content="about">About</li>
+          <li class="tab" data-content="portfolio">Portfolio</li>
+          <li class="tab" data-content="contact">Contact</li>
         </ul>
       </nav>
+
     </header>
     <article id="template">
       <h3 class="title"></h3>
@@ -29,7 +33,7 @@
       <a href="" class="authorUrl">
       <span id="author"></span></a>, published about
       <span id="days"></span> days ago.</p>
-      <p class="body"></p>
+      <span class="body"></span>
       <hr>
     </article>
   </main>

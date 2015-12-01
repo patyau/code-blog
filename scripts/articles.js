@@ -8,7 +8,13 @@ var Article = function(props) {
 };
 
 Article.prototype.daysAgo = function() {
-  
+  var oneDay = 1000 * 60 * 60 * 24;
+
+  var currentDay = new Date();
+  var publishDay = new Date(this.days);
+
+  var diffDays = Math.abs(currentDay - publishDay);
+  return Math.round(diffDays/oneDay);
 };
 
 Article.prototype.toHTML = function() {
@@ -16,7 +22,7 @@ Article.prototype.toHTML = function() {
   $articleCopy.find('.title').html(this.title);
   $articleCopy.find('#author').html(this.author);
   $articleCopy.find('.authorUrl').attr('href',this.authorUrl);
-  $articleCopy.find('#days').html(this.days);
+  $articleCopy.find('#days').html(this.daysAgo());
   $articleCopy.find('.body').html(this.body);
   $articleCopy.appendTo('main');
 };
