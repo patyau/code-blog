@@ -1,0 +1,2 @@
+-sabrina helped with getting objects to display in the dom
+-natlie helped with sorting the articles based on most recent date and linking the author url to the author name by traversing the dom
