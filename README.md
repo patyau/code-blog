@@ -1,8 +1,10 @@
 11-30-2015
 What I did today:
+- Added eslintrc file to root directory
 - Created blog article objects using an object constructor function.
 - Created the markup for the article template in the DOM and used jQuery to clone the template for each article.
 - Successfully got the articles to display in the DOM.
+- Linked the author's name to the author's URL
 - Added functionality to sort articles by most recent publish date
 - Added basic style sheets.
 
