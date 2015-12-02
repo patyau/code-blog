@@ -23,6 +23,7 @@ Article.prototype.toHTML = function() {
   $articleCopy.find('#author').html(this.author);
   $articleCopy.find('.authorUrl').attr('href',this.authorUrl);
   $articleCopy.find('#days').html(this.daysAgo());
+  $articleCopy.find('#category').html(this.category);
   $articleCopy.find('.body').html(this.body);
   $articleCopy.appendTo('main');
 };

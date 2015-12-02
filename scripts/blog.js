@@ -29,19 +29,25 @@ blog.insertArticles = function() {
 //   $('.main-nav.tab:first').trigger('click');
 // };
 //
-// blog.hideArticles = function() {
-//   $('article p:not(:first-child').hide();
-//   $('main').on('click', 'readMore', function(event) {
-//     event.preventDefault();
-//     $(this.).parent().find('p').show();
-//     $(this.).hide();
-//   });
-// };
+blog.hideArticles = function() {
+  $('article p:not(:first-child').hide();
+  // $('main .readLess').hide();
+  $('main .readMore').on('click', function(event) {
+    event.preventDefault();
+    $(this).parent().find('p').show();
+    $(this).hide();
+    // $(this).find('.readLess').show();
+    console.log(this);
+  });
+  // $('main .readLess').on('click', function(event) {
+  //   blog.hideArticles();
+  // });
+};
 
 $(document).ready(function() {
   blog.createArticles();
   blog.sortArticles();
   blog.insertArticles();
-  // blog.hideArticles();
+  blog.hideArticles();
   $('article').first().remove();
 });
