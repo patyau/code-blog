@@ -1,1 +1,1 @@
-var authors = $('main .author');
+$('#about').hide();

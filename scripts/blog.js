@@ -5,22 +5,23 @@ blog.createArticles = function() {
   for (var i=0; i < blog.rawData.length; i++) {
     // if blog.rawData.publishedOn is naan then do this...
     var create = new Article(blog.rawData[i]);
-    blog.articles.push(create);
+    this.articles.push(create);
   }
 };
 
-blog.sortArticles = function () {
-  blog.articles.sort(function(a, b) {
+blog.sortArticles = function() {
+  this.articles.sort(function(a, b) {
     return b.days - a.days;
   });
 };
 
 blog.insertArticles = function() {
   for (var i=0; i < blog.rawData.length; i++) {
-    blog.articles[i].toHTML();
-    // console.log('article' + i);
+    this.articles[i].toHTML();
+    this.articles[i].createFilters();
   }
 };
+
 
 blog.handleMainNav = function() {
   $('nav').on('click','.tab', function(e) {
@@ -45,11 +46,23 @@ blog.hideArticles = function() {
   // });
 };
 
+blog.createMenu = function() {
+  $('select[id="catFilter"]').change(function() {
+    $('#authFilter').find('option:first').attr('selected', 'selected');
+    $('main').find('article').show();
+    console.log($(this).val());
+    if($(this).val() !== 'none') {
+      $('#category:not(:contains(' + $(this).val() + '))').parent().hide();
+    }
+  })
+};
+
 $(document).ready(function() {
   blog.handleMainNav();
   blog.createArticles();
   blog.sortArticles();
   blog.insertArticles();
+  blog.createMenu();
   blog.hideArticles();
   $('article').first().remove();
 });
