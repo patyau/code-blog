@@ -16,36 +16,39 @@
       Pat Yau
     </h1>
     <nav>
-      <ul>
-        <li class="tab" data-content="blog">Blog</li>
-        <li class="tab" data-content="about">About</li>
+      <ul class="main-nav">
+        <li class="tab" data-content="blog"><a href="#">Blog</a></li>
+        <li class="tab" data-content="about"><a href="#">About</a></li>
       </ul>
+
+      <form id="authFilter">
+        <select id="authSelect">
+          <option class="authMenuItem" value="none">Filter by author</option>
+        </select>
+      </form>
+
+      <form id="catFilter">
+        <select id="catSelect">
+          <option class="catMenuItem" value="none">Filter by category</option>
+        </select>
+      </form>
+
     </nav>
   </header>
 
   <main class="container">
   <section id="blog">
 
-    <form id="authFilter">
-      <select id="authSelect">
-        <option class="authMenuItem" value="none">Filter by author</option>
-      </select>
-    </form>
-
-    <form id="catFilter">
-      <select id="catSelect">
-        <option class="catMenuItem" value="none">Filter by category</option>
-      </select>
-    </form>
-
     <article id="template">
       <h3 class="title"></h3>
+
       <span class="info">By
       <a href="" class="authorUrl">
-      <span id="author"></span></a>, published about
+      <span class="author"></span></a>, published about
       <span id="days"></span> days ago.<br />
-      Category: <span id="category"></span>
+      Category: <span class="category"></span>
       </span>
+
       <span class="body"></span>
       <a href="#" class="readMore">Read more</a>
       <!-- <a href="#" class="readLess">Read less</a> -->

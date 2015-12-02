@@ -1,21 +1,35 @@
 body {
   font-family: Verdana;
   color: #313539;
-  /*background-color: #9EC1E0;*/
+  /*background-color: #BEC4BA;*/
 }
 
 header {
-  background-color: #313539;
-  color: white;
-  margin-bottom: 2em;
+  background-color: #C7CBC1;
+  color: #313539;
+  /*margin-bottom: 2em;*/
   padding-left: 4em;
   padding-top: .25em;
   padding-bottom: .25em;
 }
 
+main {
+  background-color: white;
+}
+
+section {
+  padding: 2em;
+  width: 100%
+}
+
+article {
+  width: 100%
+  padding: 2em;
+}
+
 img {
   display: block;
-  max-width: 960px;
+  max-width: 100%;
   margin: 1em 0 1em 0;
 }
 
@@ -31,6 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 form {
   display: inline;
   margin-right: 2em;
+  width: 50%;
 }
 
 /*hr {
