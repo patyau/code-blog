@@ -1,4 +1,21 @@
-11-30-2015
+Class02_12-01-2015
+What I did today:
+- Truncated articles and added read more links
+- Added drop down filters for author and category
+- Added tab navigation
+- Added error correction so 'draft' articles will not be Created
+- Slight style updates
+
+Blocking Points:
+- Parsing the published on prop to account for all cases
+- Using advanced selectors when possible instead of id's and classes
+
+- Chris helped with getting the filter drop down menus to work
+- Sabrina helped with the article draft error correction
+
+______
+
+Class-01_11-30-2015
 What I did today:
 - Added eslintrc file to root directory
 - Created blog article objects using an object constructor function.

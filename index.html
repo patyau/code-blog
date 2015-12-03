@@ -10,32 +10,60 @@
 </head>
 
 <body>
+
+  <header>
+    <h1>
+      Pat Yau
+    </h1>
+    <nav>
+      <ul class="main-nav">
+        <li class="tab" data-content="blogLi"><a id="blogTab" href="#">Blog</a></li>
+        <li class="tab" data-content="aboutLi"><a id="aboutTab" href="#">About</a></li>
+      </ul>
+
+
+
+    </nav>
+  </header>
+
   <main class="container">
-    <header>
+  <section id="blog">
 
-      <h1>
-        Pat's Blog
-      </h1>
+    <form id="authFilter">
+      <select id="authSelect">
+        <option class="authMenuItem" value="none">Show all authors</option>
+      </select>
+    </form>
 
-      <div class="container">
-      <nav>
-        <ul>
-          <li class="tab" data-content="about">About</li>
-          <li class="tab" data-content="portfolio">Portfolio</li>
-          <li class="tab" data-content="contact">Contact</li>
-        </ul>
-      </nav>
+    <form id="catFilter">
+      <select id="catSelect">
+        <option class="catMenuItem" value="none">Show all categories</option>
+      </select>
+    </form>
 
-    </header>
     <article id="template">
       <h3 class="title"></h3>
-      <p class="info">By
-      <a href="" class="authorUrl">
-      <span id="author"></span></a>, published about
-      <span id="days"></span> days ago.</p>
+
+      <div class="info">By
+        <a href="" class="authorUrl">
+        <span class="author"></span></a>, published about
+        <span id="days"></span> days ago.<br />
+        Category: <span class="category"></span>
+      </div>
+
       <span class="body"></span>
+      <a href="#" class="readMore">Read more</a>
+      <!-- <a href="#" class="readLess">Read less</a> -->
       <hr>
     </article>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, an iuvaret persecuti eam, aliquip dignissim te vel, mei tota insolens honestatis cu. Ius tamquam eligendi te. Eu nam graeco erroribus. Has at latine atomorum.</p>
+    <p>Pri libris patrioque contentiones an, has regione voluptua perpetua eu, oratio mediocrem per te. Nihil concludaturque ex qui, has idque nostrud reprimique eu. Ut graece timeam postulant pri, sanctus habemus id nec. Et alii iusto rationibus mea, qui ei enim virtute apeirian. In ius velit persius equidem, vel et nisl disputationi, id postea omnium quaeque usu.</p>
+  </section>
+
   </main>
   <footer>
   </footer>
@@ -43,7 +71,7 @@
   <script src="scripts/articles.js"></script>
   <script src="scripts/blog.js"></script>
   <script src="scripts/blogArticles.js"></script>
-  <!-- <script src="scripts/index.js"></script> -->
+  <script src="scripts/index.js"></script>
 </body>
 
 </html>
