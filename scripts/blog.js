@@ -13,7 +13,6 @@ blog.createArticles = function() {
       count++;
     }
   }
-  console.log(count);
 };
 
 blog.sortArticles = function() {
@@ -24,13 +23,10 @@ blog.sortArticles = function() {
 
 blog.insertArticles = function() {
   for (var i=0; i < blog.articles.length; i++) {
-    console.log(this.articles[i]);
-    console.log(this.articles[19]);
     this.articles[i].toHTML(i);
     this.articles[i].createFilters();
   }
 };
-
 
 blog.handleMainNav = function() {
   $('#about').hide();
@@ -42,10 +38,9 @@ blog.handleMainNav = function() {
     $('#about').hide();
     $('#blog').show();
   });
-  // $('.main-nav.tab:first').trigger('click');
 };
 
-blog.hideArticles = function() {
+blog.truncateArticles = function() {
   $('article p:not(:first-child').hide();
   // $('main .readLess').hide();
   $('main .readMore').on('click', function(event) {
@@ -63,10 +58,9 @@ blog.hideArticles = function() {
 blog.filterArticles = function() {
   $('select[id="catSelect"]').change(function() {
     $('#authFilter').find('option:first').attr('selected', 'selected');
-
     $('main').find('article').show();
-    // console.log($(this).val());
 
+    console.log($(this).val());
     if($(this).val() !== 'none') {
       $('.category:not(:contains(' + $(this).val() + '))').parents('article').hide();
     }
@@ -74,27 +68,22 @@ blog.filterArticles = function() {
 
   $('select[id="authSelect"]').change(function() {
     $('#catFilter').find('option:first').attr('selected', 'selected');
-
     $('main').find('article').show();
-    console.log($(this).val());
 
+    console.log($(this).val());
     if($(this).val() !== 'none') {
       $('.author:not(:contains(' + $(this).val() + '))').parents('article').hide();
-      // console.log(this);
     }
   });
-
 };
-
-blog.filterArticles();
-
 
 $(document).ready(function() {
   blog.handleMainNav();
   blog.createArticles();
   blog.sortArticles();
   blog.insertArticles();
-  blog.hideArticles();
+  blog.filterArticles();
+  blog.truncateArticles();
   $('article').first().remove();
   $('#template').hide();
 });

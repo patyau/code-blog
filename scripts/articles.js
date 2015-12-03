@@ -20,11 +20,10 @@ Article.prototype.daysAgo = function() {
 
 Article.prototype.toHTML = function(index) {
   var $articleCopy = $('article').first().clone();
+
   var articleId = 'article-' + (index + 1);
-  // console.log(articleId);
   $articleCopy.attr('id', articleId);
-  // console.log(index + 1);
-  // console.log($articleCopy.attr('id'));
+  console.log($articleCopy.attr('id'));
 
   $articleCopy.find('.title').html(this.title);
   $articleCopy.find('.author').html(this.author).attr('id',this.author);
