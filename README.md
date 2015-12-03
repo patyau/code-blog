@@ -1,3 +1,17 @@
+Class03_12-02-2015
+What I did today:
+- Added responsiveness to images
+- Added responsiveness to form elements
+- Added responsiveness to nav to work in any device
+
+Blocking Points:
+- Didn't have time to add media query so that nav will be inline list instead of hamburger when viewing on bigger screens.
+
+Other Notes:
+- Used Ivan's hamburger code example as a guide for my nav.
+
+______
+
 Class02_12-01-2015
 What I did today:
 - Truncated articles and added read more links

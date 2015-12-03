@@ -27,7 +27,7 @@ Article.prototype.toHTML = function(index) {
 
   $articleCopy.find('.title').html(this.title);
   $articleCopy.find('.author').html(this.author).attr('id',this.author);
-  $articleCopy.find('.authorUrl').attr('href',this.authorUrl);
+  $articleCopy.find('.authorUrl').attr('href',this.authorUrl).attr('target','_new');
   $articleCopy.find('#days').html(this.daysAgo());
   $articleCopy.find('.category').html(this.category).attr('id',this.category);
   $articleCopy.find('.body').html(this.body);
