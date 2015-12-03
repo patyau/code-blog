@@ -2,11 +2,18 @@ var blog = {};
 blog.articles = [];
 
 blog.createArticles = function() {
+  var count = 0;
   for (var i=0; i < blog.rawData.length; i++) {
-    // if blog.rawData.publishedOn is naan then do this...
-    var create = new Article(blog.rawData[i]);
-    this.articles.push(create);
+    if (blog.rawData[i].publishedOn === '' || blog.rawData[i].publishedOn.toLowerCase() === 'draft') {
+      console.log('no');
+    }
+    else {
+      var article = new Article(blog.rawData[i]);
+      blog.articles.push(article);
+      count++;
+    }
   }
+  console.log(count);
 };
 
 blog.sortArticles = function() {
@@ -16,7 +23,9 @@ blog.sortArticles = function() {
 };
 
 blog.insertArticles = function() {
-  for (var i=0; i < blog.rawData.length; i++) {
+  for (var i=0; i < blog.articles.length; i++) {
+    console.log(this.articles[i]);
+    console.log(this.articles[19]);
     this.articles[i].toHTML(i);
     this.articles[i].createFilters();
   }
@@ -87,4 +96,5 @@ $(document).ready(function() {
   blog.insertArticles();
   blog.hideArticles();
   $('article').first().remove();
+  $('#template').hide();
 });
