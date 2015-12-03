@@ -24,7 +24,7 @@ Article.prototype.toHTML = function(index) {
   // console.log(articleId);
   $articleCopy.attr('id', articleId);
   // console.log(index + 1);
-  console.log($articleCopy.id);
+  // console.log($articleCopy.attr('id'));
 
   $articleCopy.find('.title').html(this.title);
   $articleCopy.find('.author').html(this.author).attr('id',this.author);
@@ -32,7 +32,7 @@ Article.prototype.toHTML = function(index) {
   $articleCopy.find('#days').html(this.daysAgo());
   $articleCopy.find('.category').html(this.category).attr('id',this.category);
   $articleCopy.find('.body').html(this.body);
-  $articleCopy.appendTo('main');
+  $articleCopy.appendTo('#blog');
 };
 
 Article.prototype.createFilters = function() {

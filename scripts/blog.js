@@ -24,11 +24,16 @@ blog.insertArticles = function() {
 
 
 blog.handleMainNav = function() {
-  $('nav').on('click','.tab', function(e) {
-    $('tab-content').hide();
-    $('#' + $(this).data('content')).fadeIn();
+  $('#about').hide();
+  $('#aboutTab').on('click', function(e) {
+    $('#blog').hide();
+    $('#about').show();
   });
-  $('.main-nav.tab:first').trigger('click');
+  $('#blogTab').on('click', function(e) {
+    $('#about').hide();
+    $('#blog').show();
+  });
+  // $('.main-nav.tab:first').trigger('click');
 };
 
 blog.hideArticles = function() {
@@ -39,7 +44,7 @@ blog.hideArticles = function() {
     $(this).parent().find('p').show();
     $(this).hide();
     // $(this).find('.readLess').show();
-    console.log(this);
+    // console.log(this);
   });
   // $('main .readLess').on('click', function(event) {
   //   blog.hideArticles();
@@ -51,7 +56,7 @@ blog.filterArticles = function() {
     $('#authFilter').find('option:first').attr('selected', 'selected');
 
     $('main').find('article').show();
-    console.log($(this).val());
+    // console.log($(this).val());
 
     if($(this).val() !== 'none') {
       $('.category:not(:contains(' + $(this).val() + '))').parents('article').hide();
@@ -66,7 +71,7 @@ blog.filterArticles = function() {
 
     if($(this).val() !== 'none') {
       $('.author:not(:contains(' + $(this).val() + '))').parents('article').hide();
-      console.log(this);
+      // console.log(this);
     }
   });
 
