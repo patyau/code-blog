@@ -1,13 +1,24 @@
-$('.hamburger-menu').hide();
+$('.cross').hide();
+$('.menu').hide();
 
-$('.menu-btn').click(function() {
-  $('.hamburger-menu').show();
+$('.hamburger').click(function() {
+  $('.menu').slideToggle('slow', function() {
+    $('.hamburger').hide();
+    $('.cross').show();
+  });
+});
+
+$('.cross').click(function() {
+  $('.menu').slideToggle('slow', function() {
+    $('.cross').hide();
+    $('.hamburger').show();
+  });
 });
 
 $('#aboutTab').click(function() {
-  $('.hamburger-menu').hide();
+  $('.menu').hide();
 });
 
 $('#blogTab').click(function() {
-  $('.hamburger-menu').hide();
+  $('.menu').hide();
 });

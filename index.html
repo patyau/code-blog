@@ -3,6 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="styles/normalize.css">
   <link rel="stylesheet" type="text/css" href="styles/skeleton.css">
   <link rel="stylesheet" type="text/css" href="styles/index.css">
@@ -13,27 +14,19 @@
 <body>
 
   <header>
-    <div>
-    <img class="logo-img" src="img/PATNASTY_WHITE-BLUE-WATER-MAIN.png" />
-    </div>
 
-    <nav class="mobile-nav">
-      <div class="menu-btn" id="menu-btn">
-        <div></div>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <img class="logo-img" src="img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" />
 
-      <div class="hamburger-menu">
-        <ul class="main-nav">
-          <li class="tab" data-content="blogLi"><a id="blogTab" href="#">Blog</a></li>
-          <li class="tab" data-content="aboutLi"><a id="aboutTab" href="#">About</a></li>
-        </ul>
-      </div>
-    </nav>
+    <img class="hamburger" src="img/menu3-white.png" alt="">
+    <img class="cross" src="img/cross-white.png" alt="">
 
   </header>
+  <div class="menu">
+    <ul class="">
+      <a id="blogTab" href="#"><li class="tab" data-content="blogLi">Blog</li></a>
+      <a id="aboutTab" href="#"><li class="tab" data-content="aboutLi">About</li></a>
+    </ul>
+  </div>
 
   <main class="container">
     <section id="blog">
@@ -74,7 +67,7 @@
 
   <footer>
   </footer>
-  <script src="scripts/jquery-1.11.3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="scripts/articles.js"></script>
   <script src="scripts/blog.js"></script>
   <script src="scripts/blogArticles.js"></script>

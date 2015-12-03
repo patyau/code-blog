@@ -85,5 +85,5 @@ $(document).ready(function() {
   blog.filterArticles();
   blog.truncateArticles();
   $('article').first().remove();
-  $('#template').hide();
+  // $('#template').hide();
 });
