@@ -1,5 +1,5 @@
-$('.cross').hide();
-$('.menu').hide();
+// $('.cross').hide();
+// $('.menu').hide();
 
 $('.hamburger').click(function() {
   $('.menu').slideToggle('slow', function() {
@@ -15,10 +15,14 @@ $('.cross').click(function() {
   });
 });
 
-$('#aboutTab').click(function() {
-  $('.menu').hide();
-});
-
-$('#blogTab').click(function() {
-  $('.menu').hide();
-});
+// $('.tab').click(function() {
+//   $('.menu').slideToggle('slow', function() {
+//   $('.cross').hide();
+//   $('.hamburger').show();
+// });
+//
+// $('#blogTab').click(function() {
+//   $('.menu').hide();
+//   $('.cross').hide();
+//   $('.hamburger').show();
+// });

@@ -9,39 +9,60 @@
   <link rel="stylesheet" type="text/css" href="styles/index.css">
   <title>Pat Yau
   </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+
+  <script id="blogArticle" type="text/x-handlebars-template">
+    <article id="template">
+    <h4 class="title">{{title}}</h4>
+    <div class="info">
+      By <a href="{{authorURL}}" class="authorUrl"><span class="author">{{author}}</span></a>, published about {{daysAgo}} days ago.<br />
+      Category: <span class="category">{{category}}</span>
+    </div>
+    <span class="body">{{{body}}}</span>
+    <a href="#" class="readMore">Read more</a>
+    <!-- <a href="#" class="readLess">Read less</a> -->
+    <hr>
+    </article>
+  </script>
+
 </head>
 
 <body>
 
   <header>
+    <a href="index.html">
+    <img class="logo-img" src="img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" /></a>
 
-    <img class="logo-img" src="img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" />
-
+    <!-- <div class="header-wrapper"> -->
     <img class="hamburger" src="img/menu3-white.png" alt="">
     <img class="cross" src="img/cross-white.png" alt="">
+    <!-- </div> -->
 
+    <nav class="menu">
+      <ul class="">
+        <a id="blogTab" href="#"><li class="tab" data-content="blogLi">Blog</li></a>
+        <a id="aboutTab" href="#"><li class="tab" data-content="aboutLi">Bio</li></a>
+      </ul>
+    </nav>
   </header>
-  <div class="menu">
-    <ul class="">
-      <a id="blogTab" href="#"><li class="tab" data-content="blogLi">Blog</li></a>
-      <a id="aboutTab" href="#"><li class="tab" data-content="aboutLi">About</li></a>
-    </ul>
-  </div>
 
   <main class="container">
     <section id="blog">
+      <h1>Blog</h1>
       <form id="authFilter">
         <select id="authSelect">
-          <option class="authMenuItem" value="none">Show all authors</option>
+          <option class="authMenuItem" value="none">All authors</option>
         </select>
       </form>
       <form id="catFilter">
         <select id="catSelect">
-          <option class="catMenuItem" value="none">Show all categories</option>
+          <option class="catMenuItem" value="none">All categories</option>
         </select>
       </form>
-
-      <article id="template">
+    <hr>
+    <div id="app"></div>
+      <!-- <article id="template">
         <h3 class="title"></h3>
 
         <div class="info">By
@@ -53,13 +74,12 @@
 
         <span class="body"></span>
         <a href="#" class="readMore">Read more</a>
-        <!-- <a href="#" class="readLess">Read less</a> -->
         <hr>
-      </article>
+      </article> -->
     </section>
 
     <section id="about">
-      <h2>About</h2>
+      <h1>Bio</h1>
       <p>Lorem ipsum dolor sit amet, an iuvaret persecuti eam, aliquip dignissim te vel, mei tota insolens honestatis cu. Ius tamquam eligendi te. Eu nam graeco erroribus. Has at latine atomorum.</p>
       <p>Pri libris patrioque contentiones an, has regione voluptua perpetua eu, oratio mediocrem per te. Nihil concludaturque ex qui, has idque nostrud reprimique eu. Ut graece timeam postulant pri, sanctus habemus id nec. Et alii iusto rationibus mea, qui ei enim virtute apeirian. In ius velit persius equidem, vel et nisl disputationi, id postea omnium quaeque usu.</p>
     </section>
@@ -67,7 +87,6 @@
 
   <footer>
   </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="scripts/articles.js"></script>
   <script src="scripts/blog.js"></script>
   <script src="scripts/blogArticles.js"></script>

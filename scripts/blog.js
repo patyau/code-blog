@@ -84,6 +84,6 @@ $(document).ready(function() {
   blog.insertArticles();
   blog.filterArticles();
   blog.truncateArticles();
-  $('article').first().remove();
+  // $('article').first().remove();
   // $('#template').hide();
 });
