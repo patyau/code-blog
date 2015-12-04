@@ -9,24 +9,42 @@
   <link rel="stylesheet" type="text/css" href="styles/index.css">
   <title>Pat Yau
   </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+
+  <script id="blogArticle" type="text/x-handlebars-template">
+    <article id="template">
+    <h3 class="title">{{title}}</h3>
+    <div class="info">
+      By <a href="{{authorURL}}" class="authorUrl"><span class="author">{{author}}</span></a>, published about {{daysAgo}} days ago.<br />
+      Category: <span class="category">{{category}}</span>
+    </div>
+    <span class="body">{{{body}}}</span>
+    <a href="#" class="readMore">Read more</a>
+    <!-- <a href="#" class="readLess">Read less</a> -->
+    <hr>
+    </article>
+  </script>
+
 </head>
 
 <body>
 
   <header>
-
     <img class="logo-img" src="img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" />
 
+    <!-- <div class="header-wrapper"> -->
     <img class="hamburger" src="img/menu3-white.png" alt="">
     <img class="cross" src="img/cross-white.png" alt="">
+    <!-- </div> -->
 
+    <nav class="menu">
+      <ul class="">
+        <a id="blogTab" href="#"><li class="tab" data-content="blogLi">Blog</li></a>
+        <a id="aboutTab" href="#"><li class="tab" data-content="aboutLi">About</li></a>
+      </ul>
+    </nav>
   </header>
-  <div class="menu">
-    <ul class="">
-      <a id="blogTab" href="#"><li class="tab" data-content="blogLi">Blog</li></a>
-      <a id="aboutTab" href="#"><li class="tab" data-content="aboutLi">About</li></a>
-    </ul>
-  </div>
 
   <main class="container">
     <section id="blog">
@@ -40,8 +58,8 @@
           <option class="catMenuItem" value="none">Show all categories</option>
         </select>
       </form>
-
-      <article id="template">
+      <div id="app"></div>
+      <!-- <article id="template">
         <h3 class="title"></h3>
 
         <div class="info">By
@@ -53,9 +71,8 @@
 
         <span class="body"></span>
         <a href="#" class="readMore">Read more</a>
-        <!-- <a href="#" class="readLess">Read less</a> -->
         <hr>
-      </article>
+      </article> -->
     </section>
 
     <section id="about">
@@ -67,7 +84,6 @@
 
   <footer>
   </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="scripts/articles.js"></script>
   <script src="scripts/blog.js"></script>
   <script src="scripts/blogArticles.js"></script>

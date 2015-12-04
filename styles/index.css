@@ -20,8 +20,21 @@ header {
   /*padding-bottom: .25em;*/
   width: 100%;
   border-bottom: #46C0C6 6px solid;
+  /*line-height: 85px;*/
+  font-family: 'Fjalla One', sans-serif;
+  padding-left: 5%;
+  padding-right: 10%;
+}
+
+header {
+    /*margin: 0 auto 0 auto;*/
+    /*width: 80%;*/
+}
+
+
+.header-wrapper {
   height: 85px;
-  line-height: 85px;
+  width: 80%;
 }
 
 main {
@@ -74,14 +87,16 @@ select {
   /*margin-top: 2em;
   margin-bottom: 2em;*/
   /*min-width: 70px;*/
-  position: absolute;
+  /*position: absolute;
   top: 5px;
-  left: 20px;
+  left: 20px;*/
+  padding-right: 20px;
+  margin-top: 10px;
 }
 
 .hamburger {
   position: absolute;
-  top:25px;
+  top:30px;
   right:0;
   line-height:45px;
   padding: 0px 15px 0px 15px;
@@ -91,8 +106,9 @@ select {
 }
 
 .cross {
+  display: none;
   position: absolute;
-  top:25px;
+  top:30px;
   right:15px;
   line-height:45px;
   padding: 0px 15px 0px 15px;
@@ -102,6 +118,7 @@ select {
 }
 
 .menu {
+  display: none;
   z-index: 100000;
   font-weight: bold;
   font-size: 1.8em;
@@ -112,10 +129,12 @@ select {
 }
 
 .menu ul {
+  display: block;
   margin: 0;
   padding: 0
   list-style-type: none;
   list-style-image: none;
+  /*width: 100%;*/
 }
 
 .menu li {
@@ -151,15 +170,84 @@ select {
   text-decoration: none;
   color: white;
 }
-/*
-@media all and (min-width: 600px) {
+
+@media all and (min-width: 620px) {
+  header {
+      margin: 0 auto 0 auto;
+      /*width: 80%;*/
+      padding-left: 10%;
+      padding-right: 10%;
+  }
+
   .hamburger {
     display: none;
   }
   .cross {
     display: none;
   }
-  .menu ul {
+  .menu {
     display: inline;
+    width: 280px;
+    /*position: absolute;
+    right: 50px;
+    width: 30%;*/
+    padding-top: 30px;
   }
-}*/
+  .menu ul {
+    /*display: block;*/
+    /*position: absolute;*/
+    /*right: 300px;*/
+    top: 0;
+  }
+  .menu li {
+    display: inline;
+    /*position: absolute;*/
+    /*margin: 20px;*/
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;
+    text-align: left;
+    /*border: white 2px solid;*/
+    height: 75px;
+  }
+  .menu li:hover {
+    display: inline;
+    background: #orange;
+    padding: 0px 40px 0 40px;
+    /*border-bottom: white 1px solid;*/
+    /*border-left: white 1px solid;
+    border-right: white 1px solid;*/
+    border: none;
+  }
+  .menu ul li a {
+    text-decoration: none;
+    margin: 0px;
+    color: white;
+  }
+
+  .menu ul li a:hover {
+    color: orange;
+    text-decoration: none;
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .menu a:hover {
+    text-decoration: none;
+    color: orange;
+  }
+
+  .logo-img {
+    height: 75px;
+    /*margin-top: 2em;
+    margin-bottom: 2em;*/
+    /*min-width: 70px;*/
+    /*position: absolute;
+    top: 5px;
+    left: 20px;*/
+    padding-right: 40px;
+  }
+}

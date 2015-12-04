@@ -19,19 +19,23 @@ Article.prototype.daysAgo = function() {
 };
 
 Article.prototype.toHTML = function(index) {
-  var $articleCopy = $('article').first().clone();
+  var source =$('#blogArticle').html();
+  var template = Handlebars.compile(source);
+  var html = template(this);
+  $('#app').append(html);
 
-  var articleId = 'article-' + (index + 1);
-  $articleCopy.attr('id', articleId);
-  console.log($articleCopy.attr('id'));
-
-  $articleCopy.find('.title').html(this.title);
-  $articleCopy.find('.author').html(this.author).attr('id',this.author);
-  $articleCopy.find('.authorUrl').attr('href',this.authorUrl).attr('target','_new');
-  $articleCopy.find('#days').html(this.daysAgo());
-  $articleCopy.find('.category').html(this.category).attr('id',this.category);
-  $articleCopy.find('.body').html(this.body);
-  $articleCopy.appendTo('#blog');
+  //
+  var $articleId = $('article').last();
+  var setArticleId = 'article-' + (index + 1);
+  $articleId.attr('id', setArticleId);
+  console.log($articleId.attr('id'));
+  // $articleCopy.find('.title').html(this.title);
+  // $articleCopy.find('.author').html(this.author).attr('id',this.author);
+  // $articleCopy.find('.authorUrl').attr('href',this.authorUrl).attr('target','_new');
+  // $articleCopy.find('#days').html(this.daysAgo());
+  // $articleCopy.find('.category').html(this.category).attr('id',this.category);
+  // $articleCopy.find('.body').html(this.body);
+  // $articleCopy.appendTo('#blog');
 };
 
 Article.prototype.createFilters = function() {
