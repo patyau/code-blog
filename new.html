@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+  <link rel="stylesheet" type="text/css" href="styles/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="styles/index.css">
+  <title>Pat Yau
+  </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+    <img class="logo-img" src="img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" /></a>
+
+    <!-- <div class="header-wrapper"> -->
+    <img class="hamburger" src="img/menu3-white.png" alt="">
+    <img class="cross" src="img/cross-white.png" alt="">
+    <!-- </div> -->
+
+    <nav class="menu">
+      <ul class="">
+        <a id="blogTab" href="#"><li class="tab" data-content="blogLi">Blog</li></a>
+        <a id="aboutTab" href="#"><li class="tab" data-content="aboutLi">Bio</li></a>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="blog">
+      <h1> New Blog Entries</h1>
+      <section id="write">
+   <form action="#" id="new-form">
+     <label>
+       <input type="text" id="article-title" placeholder="Article title" required>
+     </label>
+     <textarea id="article-body" rows="8" cols="40 required">
+     </textarea>
+     <label>
+       <input type="text" id="article-author" placeholder="Author" required>
+     </label>
+     <label>
+       <input type="text" id="article-author-url" placeholder="Author's URL" required>
+     </label>
+     <label>
+       <input type="text" id="article-category" placeholder="Article category" required>
+     </label>
+     <label>
+       <input type="checkbox" id="article-published">Published
+     </label>
+     <input type="submit">
+   </form>
+ </section>
+
+ <section id="preview">
+   <article id="">
+   <h4 class="title"></h4>
+   <div class="info">
+     By <a href="#" class="authorUrl"><span class="author"></span></a>, published about days ago.<br />
+     Category: <span class="category"></span>
+   </div>
+   <span class="body"></span>
+   <a href="#" class="readMore">Read more</a>
+   <!-- <a href="#" class="readLess">Read less</a> -->
+   <hr>
+   </article>
+</section>
+
+<section id="article-export">
+  <label id="export-field" for="article-json" class="pull-right">
+    <input type="text" readonly id="article-json">
+  </label>
+</section>
+  </main>
+
+  <footer>
+  </footer>
+  <script src="scripts/articles.js"></script>
+  <script src="scripts/blog.js"></script>
+  <script src="scripts/blogArticles.js"></script>
+  <script src="new.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
