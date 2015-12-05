@@ -84,7 +84,7 @@ $(document).ready(function() {
   blog.insertArticles();
   blog.filterArticles();
   blog.truncateArticles();
-  newArticlePreview();
+  // newArticlePreview();
   // $('article').first().remove();
   // $('#template').hide();
 });
