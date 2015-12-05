@@ -19,15 +19,16 @@ Article.prototype.daysAgo = function() {
 };
 
 Article.prototype.toHTML = function(index) {
-  // var source =$('#blogArticle').html();
-  // var template = Handlebars.compile(source);
-  // var html = template(this);
-  // $('#app').append(html);
-  //
-  // var $articleId = $('article').last();
-  // var setArticleId = 'article-' + (index + 1);
-  // $articleId.attr('id', setArticleId);
-  // console.log($articleId.attr('id'));
+  var source =$('#blogArticle').html();
+  var template = Handlebars.compile(source);
+  var html = template(this);
+  $('#app').append(html);
+
+  var $articleId = $('article').last();
+  var setArticleId = 'article-' + (index + 1);
+  $articleId.attr('id', setArticleId);
+  console.log($articleId.attr('id'));
+
   // $articleCopy.find('.title').html(this.title);
   // $articleCopy.find('.author').html(this.author).attr('id',this.author);
   // $articleCopy.find('.authorUrl').attr('href',this.authorUrl).attr('target','_new');
