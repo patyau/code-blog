@@ -11,8 +11,19 @@
   </title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
-
-
+  <script id="blogArticle" type="text/x-handlebars-template">
+    <article id="template">
+    <h4 class="title">{{title}}</h4>
+    <div class="info">
+      By <a href="{{authorURL}}" class="authorUrl"><span class="author">{{author}}</span></a>, published about {{daysAgo}} days ago.<br />
+      Category: <span class="category">{{category}}</span>
+    </div>
+    <span class="body">{{{body}}}</span>
+    <a href="#" class="readMore">Read more</a>
+    <!-- <a href="#" class="readLess">Read less</a> -->
+    <hr>
+    </article>
+  </script>
 </head>
 
 <body>
@@ -35,7 +46,7 @@
   </header>
 
   <main class="container">
-    <div id="blog">
+    <section class=".one-half.column" id="blog">
       <h1> New Blog Entry</h1>
       <form action="#" id="new-form">
         <label>
@@ -58,37 +69,38 @@
         </label>
         <input type="submit">
       </form>
-    </div>
-    <hr>
-    <div id="preview">
+    </section>
+    <!-- <hr> -->
+    <section class=".one-half.column" id="preview">
       <h1> New blog preview</h1>
       <article id="">
       <h4 class="title"></h4>
       <div class="info">
-        By <a href="#" class="authorUrl"><span class="author"></span></a>, published today.<br />
+        By <a href="" class="authorUrl"><span class="author"></span></a>, published today.<br />
         Category: <span class="category"></span>
       </div>
       <span class="body"></span>
-      <!-- <a href="#" class="readMore">Read more</a> -->
+      <a href="#" class="readMore">Read more</a>
       <!-- <a href="#" class="readLess">Read less</a> -->
       </article>
-    </div>
+    </section>
     <hr>
-    <div id="article-export">
+
+    <section id="article-export">
       <h1>JSON string</h1>
       <label id="export-field" for="article-json" class="pull-right">
         <input type="text" readonly id="article-json">
       </label>
-    </div>
+    </section>
   </main>
 
   <footer>
   </footer>
-  <!-- <script src="scripts/articles.js"></script> -->
-  <!-- <script src="scripts/blog.js"></script> -->
-  <!-- <script src="scripts/blogArticles.js"></script> -->
+  <script src="scripts/articles.js"></script>
+  <script src="scripts/blog.js"></script>
+  <script src="scripts/blogArticles.js"></script>
   <script src="new.js"></script>
-  <script src="scripts/index.js"></script>
+  <!-- <script src="scripts/index.js"></script> -->
   <script src ="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
 </body>
 

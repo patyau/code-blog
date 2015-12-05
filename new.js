@@ -9,7 +9,7 @@ function newArticlePreview() {
 
   $('.title').append($titleTemp);
   $('.author').append($authorTemp);
-  $('.authorUrl').append($authorUrlTemp);
+  $('.authorUrl').attr('href',$authorUrlTemp);
   $('.category').append($categoryTemp);
   $('.body').html($bodyTemp);
 
@@ -25,6 +25,8 @@ function newArticlePreview() {
   var jsonString = JSON.stringify(stringData);
   console.log(jsonString);
   $('#article-json').val(jsonString);
+
+  truncateArticles();
 };
 
 $(document).ready(function(event) {

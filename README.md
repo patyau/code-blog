@@ -1,3 +1,24 @@
+Class05_12-04-2015
+What I did today:
+- Pair programming
+  Driver: Erika
+  Navigator: Pat
+    Added new blog entry page, form and live preview
+- Added markdown functionality for new blog entry preview and JSON export of new entry data
+
+Other notes:
+- Jesse helped with live preview functionality
+- Robert helped with markdown and JSON export functionality
+______
+
+Class04_12-03-2015
+What I did today:
+- Worked on nav menu
+- Added more styling
+- Added handlebars and blog article template functionality
+
+______
+
 Class03_12-02-2015
 What I did today:
 - Added responsiveness to images

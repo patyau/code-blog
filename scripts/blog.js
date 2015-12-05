@@ -40,7 +40,7 @@ blog.handleMainNav = function() {
   });
 };
 
-blog.truncateArticles = function() {
+truncateArticles = function() {
   $('article p:not(:first-child').hide();
   // $('main .readLess').hide();
   $('main .readMore').on('click', function(event) {
@@ -83,7 +83,7 @@ $(document).ready(function() {
   blog.sortArticles();
   blog.insertArticles();
   blog.filterArticles();
-  blog.truncateArticles();
+  truncateArticles();
   // newArticlePreview();
   // $('article').first().remove();
   // $('#template').hide();

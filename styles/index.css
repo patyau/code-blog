@@ -269,4 +269,8 @@ select {
     padding-right: 40px;
     padding-left: 0px;
   }
+  .one-half.column {
+    float: left;
+    display: inline;
+  }
 }

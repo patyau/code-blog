@@ -19,7 +19,8 @@ Article.prototype.daysAgo = function() {
 };
 
 Article.prototype.toHTML = function(index) {
-  var source =$('#blogArticle').html();
+  var source = $('#blogArticle').html();
+  console.log(source);
   var template = Handlebars.compile(source);
   var html = template(this);
   $('#app').append(html);
