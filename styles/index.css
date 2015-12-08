@@ -15,6 +15,7 @@ nav {
 
 header {
   background: rgba(0, 0, 0, .9);
+  /*background: linear-gradient(black, white);*/
   /*background: gray;*/
   color: #53D5D5;
   /*margin-bottom: 2em;*/

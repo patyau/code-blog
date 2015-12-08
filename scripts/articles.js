@@ -18,26 +18,19 @@ Article.prototype.daysAgo = function() {
   return Math.round(diffDays/oneDay);
 };
 
-Article.prototype.toHTML = function(index) {
-  var source = $('#blogArticle').html();
-  console.log(source);
-  var template = Handlebars.compile(source);
-  var html = template(this);
+Article.prototype.toHTML = function() {
+  // Populating article content
+  var html = this.compile(this);
   $('#app').append(html);
+};
 
+Article.prototype.createArticleID = function(index) {
+  // Setting unique ID for each article
   var $articleId = $('article').last();
   var setArticleId = 'article-' + (index + 1);
   $articleId.attr('id', setArticleId);
-  console.log($articleId.attr('id'));
-
-  // $articleCopy.find('.title').html(this.title);
-  // $articleCopy.find('.author').html(this.author).attr('id',this.author);
-  // $articleCopy.find('.authorUrl').attr('href',this.authorUrl).attr('target','_new');
-  // $articleCopy.find('#days').html(this.daysAgo());
-  // $articleCopy.find('.category').html(this.category).attr('id',this.category);
-  // $articleCopy.find('.body').html(this.body);
-  // $articleCopy.appendTo('#blog');
 };
+
 
 Article.prototype.createFilters = function() {
   var $authMenuItemClone = $('.authMenuItem').clone();
