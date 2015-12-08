@@ -1,3 +1,15 @@
+Class06_12-07-2015
+What I did today:
+- Moved template into separate page and successfully got the index page to populate blog articles
+- Separated out some functions to improve clarity and efficiency
+
+Blocking points:
+- Could not get new.html page to populate live preview of blog article using handlebar template
+
+Other notes:
+- Robert helped with the handlebar template functionality on the index page
+______
+
 Class05_12-04-2015
 What I did today:
 - Pair programming
