@@ -1,0 +1,14 @@
+<script id="blogArticle" type="text/x-handlebars-template">
+  <article id="template">
+  <h4 class="title">{{title}}</h4>
+  <div class="info">
+    By <a href="{{authorURL}}" class="authorUrl"><span class="author">{{author}}</span></a>, published about {{daysAgo}} days ago.<br />
+    Category: <span class="category">{{category}}</span>
+  </div>
+  <span class="body">{{{body}}}</span>
+  <a href="#" class="readMore">Read more</a>
+  <!-- Commenting out read less button until functionality is working correctly -->
+  <!-- <a href="#" class="readLess">Read less</a> -->
+  <hr>
+  </article>
+</script>
