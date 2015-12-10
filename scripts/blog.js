@@ -1,19 +1,37 @@
 var blog = {};
 blog.articles = [];
 
-blog.createArticles = function() {
-  var count = 0;
-  for (var i=0; i < blog.rawData.length; i++) {
-    if (blog.rawData[i].publishedOn === '' || blog.rawData[i].publishedOn.toLowerCase() === 'draft') {
-      // console.log('no');
-    }
-    else {
-      var article = new Article(blog.rawData[i]);
-      blog.articles.push(article);
-      count++;
-    }
-  }
+blog.getData = function() {
+  $.get('scripts/hackerIpsum.json', blog.setArticles)
+  .done(function() {
+    console.log('Finished getting the data. Let\'s run the functions...');
+    //add functions here
+  });
 };
+
+blog.setArticles = function(data) {
+  // console.log('getting the data');
+  data.forEach(function(item) {
+    var article = new Article(item);
+    blog.articles.push(article);
+  });
+  blog.sortArticles();
+  blog.compileArticle();
+};
+
+// blog.createArticles = function() {
+//   var count = 0;
+//   for (var i=0; i < blog.articles.length; i++) {
+//     if (blog.articles[i].publishedOn === '' || blog.articles[i].publishedOn.toLowerCase() === 'draft') {
+//       // console.log('no');
+//     }
+//     else {
+//       var article = new Article(blog.articles[i]);
+//       blog.articles.push(article);
+//       count++;
+//     }
+//   }
+// };
 
 blog.sortArticles = function() {
   this.articles.sort(function(a, b) {
@@ -26,6 +44,7 @@ blog.insertArticles = function() {
     this.articles[i].toHTML(i);
     this.articles[i].createArticleID(i);
     this.articles[i].createFilters();
+    this.articles[i].insertRecord();
   }
 };
 
@@ -104,12 +123,13 @@ blog.filterArticles = function() {
 };
 
 $(document).ready(function() {
-  util.handleMainNav();
-  blog.createArticles();
-  blog.sortArticles();
-  blog.compileArticle();
-  blog.filterArticles();
-  util.truncateArticles();
+  // util.handleMainNav();
+  // blog.getData();
+  // blog.createArticles();
+  // blog.sortArticles();
+  // blog.compileArticle();
+  // blog.filterArticles();
+  // util.truncateArticles();
   // newArticlePreview();
   // $('article').first().remove();
   // $('#template').hide();

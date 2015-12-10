@@ -24,6 +24,21 @@ Article.prototype.toHTML = function() {
   $('#app').append(html);
 };
 
+Article.prototype.insertRecord = function() {
+  // insert article record into database
+  html5sql.process(
+    [
+      {
+        'sql': 'INSERT INTO articles (title, author, authorUrl, category, publishedOn, markdown) VALUES (?, ?, ?, ?, ?, ?);',
+        'data': [this.title, this.author, this.authorUrl, this.category, this.publishedOn, this.body],
+      }
+    ],
+    function() {
+      console.log('successfully inserted record');
+    }
+  );
+};
+
 Article.prototype.createArticleID = function(index) {
   // Setting unique ID for each article
   var $articleId = $('article').last();

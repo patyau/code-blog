@@ -1,12 +1,13 @@
 var util = {};
 
 util.truncateArticles = function() {
-  $('article p:not(:first-child').hide();
+  $('#body').children(':nth-child(n+2)').hide();
   // $('main .readLess').hide();
   $('main .readMore').on('click', function(event) {
     event.preventDefault();
-    $(this).parent().find('p').show();
+    $(this).prev('.article-body').children().show();
     $(this).hide();
+
     // $(this).find('.readLess').show();
     // console.log(this);
   });
@@ -26,3 +27,8 @@ util.handleMainNav = function() {
     $('#blog').show();
   });
 };
+
+$(function() {
+  // util.truncateArticles();
+  util.handleMainNav();
+});
