@@ -39,28 +39,3 @@ Article.prototype.insertRecord = function(callback) {
     }
   );
 };
-
-Article.prototype.createFilters = function(ele) {
-  var $authMenuItemClone = $('.authMenuItem').clone();
-  $authMenuItemClone.removeAttr('class');
-  $authMenuItemClone.attr('value', this.author);
-  $authMenuItemClone.text(this.author);
-  if ($('#authSelect').find('option[value="' + this.author + '"]').length === 0) {
-    $('#authSelect').append($authMenuItemClone);
-  }
-
-  var $catMenuItemClone = $('.catMenuItem').clone();
-  $catMenuItemClone.removeAttr('class');
-  $catMenuItemClone.attr('value', this.category);
-  $catMenuItemClone.text(this.category);
-  if ($('#catSelect').find('option[value="' + this.category + '"]').length === 0) {
-    $('#catSelect').append($catMenuItemClone);
-  }
-};
-
-Article.prototype.createArticleID = function(index) {
-  // Setting unique ID for each article
-  var $articleId = $('article').last();
-  var setArticleId = 'article-' + (index + 1);
-  $articleId.attr('id', setArticleId);
-};
