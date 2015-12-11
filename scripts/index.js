@@ -1,6 +1,3 @@
-// $('.cross').hide();
-// $('.menu').hide();
-
 $('.hamburger').click(function() {
   $('.menu').slideToggle('slow', function() {
     $('.hamburger').hide();
@@ -15,25 +12,8 @@ $('.cross').click(function() {
   });
 });
 
-// $('.tab').click(function() {
-//   $('.menu').slideToggle('slow', function() {
-//   $('.cross').hide();
-//   $('.hamburger').show();
-// });
-//
-// $('#blogTab').click(function() {
-//   $('.menu').hide();
-//   $('.cross').hide();
-//   $('.hamburger').show();
-// });
-
 $(function() {
   webDB.init();
   util.handleMainNav();
-  blog.getData();
-  // blog.createArticles();
-  // blog.sortArticles();
-  // blog.compileArticle();
-  blog.filterArticles();
-  util.truncateArticles();
+  blog.loadArticles();
 });
