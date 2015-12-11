@@ -1,4 +1,37 @@
-Class06_12-07-2015
+Class-08_12-09-2015
+What I did today:
+- populated articles into sql db
+- set up local storage functionality
+- got articles to render from the db
+- reimplemented article preview and menu filtering functionality to work with other new updates
+- added more styling
+- got new entry page to do live preview, insert record into db, and json export on submit
+
+Blocking points:
+- still trying to figure out how to include admin and post edit functionality
+
+Other notes:
+- Jonathan helped with getting index page functionality working
+- Code review helped get a lot of the functionality on the index page working
+- Relied heavily on the class example code as a guide to refactor my code and implement blog behavior functionality
+
+______
+
+
+Class-07_12-08-2015
+What I did today:
+- Created a stats page
+
+Blocking points:
+- was not able to figure out how to get the average word length per post or per author
+
+Other notes:
+- Jesse helped with the total word count function
+
+______
+
+
+Class-06_12-07-2015
 What I did today:
 - Moved template into separate page and successfully got the index page to populate blog articles
 - Separated out some functions to improve clarity and efficiency
@@ -8,9 +41,11 @@ Blocking points:
 
 Other notes:
 - Robert helped with the handlebar template functionality on the index page
+
 ______
 
-Class05_12-04-2015
+
+Class-05_12-04-2015
 What I did today:
 - Pair programming
   Driver: Erika
@@ -21,9 +56,11 @@ What I did today:
 Other notes:
 - Jesse helped with live preview functionality
 - Robert helped with markdown and JSON export functionality
+
 ______
 
-Class04_12-03-2015
+
+Class-04_12-03-2015
 What I did today:
 - Worked on nav menu
 - Added more styling
@@ -31,7 +68,7 @@ What I did today:
 
 ______
 
-Class03_12-02-2015
+Class-03_12-02-2015
 What I did today:
 - Added responsiveness to images
 - Added responsiveness to form elements
@@ -45,7 +82,7 @@ Other Notes:
 
 ______
 
-Class02_12-01-2015
+Class-02_12-01-2015
 What I did today:
 - Truncated articles and added read more links
 - Added drop down filters for author and category
@@ -61,6 +98,7 @@ Blocking Points:
 - Sabrina helped with the article draft error correction
 
 ______
+
 
 Class-01_11-30-2015
 What I did today:
