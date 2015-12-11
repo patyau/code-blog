@@ -30,10 +30,7 @@ $('.cross').click(function() {
 $(function() {
   webDB.init();
   util.handleMainNav();
-  blog.getData();
-  // blog.createArticles();
-  // blog.sortArticles();
-  // blog.compileArticle();
-  blog.filterArticles();
-  util.truncateArticles();
+  blog.loadArticles();
+  // blog.filterArticles();
+  // util.truncateArticles();
 });

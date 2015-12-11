@@ -94,11 +94,14 @@ stats.averageWordsPost = function() {
 };
 
 stats.averageWordsLengthPost = function() {
-  // var averageWordLength = stats.pluck('markdown', stats.data);
-  // averageWordPost = averageWordLength.map(function {
-  //   averageWordLength.length
+  // var body = [];
+  // var words = [];
+  // body = stats.pluck('markdown', stats.data);
+  // words = body.map(function(item) {
+  //   return item.split(' ');
   // });
-  // console.log(averageWordLength[0]);
+  // // var char = streduce(stats.sum).length;
+  // console.log(words);
 };
 
 stats.averageWordsAuthor = function() {

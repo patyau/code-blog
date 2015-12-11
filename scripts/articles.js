@@ -1,32 +1,33 @@
-function Article (props) {
-  this.title = props.title;
-  this.category = props.category;
-  this.author = props.author;
-  this.authorUrl = props.authorUrl;
-  this.body = props.body;
-  this.days = Date.parse(props.publishedOn);
-  this.age = this.daysAgo;
-};
+function Article (opts) {
+  Object.keys(opts).forEach(function(propName, index, keys) {
+    this[propName] = opts[propName];
+  // on the next line 'this' is a context paramaeter so that the anonymous callback function knows to reference the instance of this article and not the window.
+  },this);
 
-Article.prototype.daysAgo = function() {
-  var oneDay = 1000 * 60 * 60 * 24;
+  this.body = opts.body || marked(this.markdown);
+}
 
-  var currentDay = new Date();
-  var publishDay = new Date(this.days);
-
-  var diffDays = currentDay - publishDay;
-  return Math.round(diffDays/oneDay);
-};
+// Article.prototype.daysAgo = function() {
+//   var oneDay = 1000 * 60 * 60 * 24;
+//
+//   var currentDay = new Date();
+//   var publishDay = new Date(this.days);
+//
+//   var diffDays = currentDay - publishDay;
+//   return Math.round(diffDays/oneDay);
+// };
 
 Article.prototype.toHTML = function() {
   // Populating article content
-  var html = this.compile(this);
-  $('#app').append(html);
+  this.daysAgo =
+    parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+
+  return this.template(this);
 };
 
-Article.prototype.insertRecord = function() {
+Article.prototype.insertRecord = function(callback) {
   // insert article record into database
-  html5sql.process(
+  webDB.execute(
     [
       {
         'sql': 'INSERT INTO articles (title, author, authorUrl, category, publishedOn, markdown) VALUES (?, ?, ?, ?, ?, ?);',
@@ -39,15 +40,7 @@ Article.prototype.insertRecord = function() {
   );
 };
 
-Article.prototype.createArticleID = function(index) {
-  // Setting unique ID for each article
-  var $articleId = $('article').last();
-  var setArticleId = 'article-' + (index + 1);
-  $articleId.attr('id', setArticleId);
-};
-
-
-Article.prototype.createFilters = function() {
+Article.prototype.createFilters = function(ele) {
   var $authMenuItemClone = $('.authMenuItem').clone();
   $authMenuItemClone.removeAttr('class');
   $authMenuItemClone.attr('value', this.author);
@@ -63,4 +56,11 @@ Article.prototype.createFilters = function() {
   if ($('#catSelect').find('option[value="' + this.category + '"]').length === 0) {
     $('#catSelect').append($catMenuItemClone);
   }
+};
+
+Article.prototype.createArticleID = function(index) {
+  // Setting unique ID for each article
+  var $articleId = $('article').last();
+  var setArticleId = 'article-' + (index + 1);
+  $articleId.attr('id', setArticleId);
 };
