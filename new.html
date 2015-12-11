@@ -13,21 +13,6 @@
   </title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
-  <script id="blogArticle" type="text/x-handlebars-template">
-    <article id="template">
-    <h4 class="title">{{title}}</h4>
-    <div class="info">
-      By <a href="{{authorURL}}" class="authorUrl"><span class="author">{{author}}</span></a>, published about {{daysAgo}} days ago.<br />
-      Category: <span class="category">{{category}}</span>
-    </div>
-    <span class="body">{{{body}}}</span>
-    <a href="#" class="readMore">Read more</a>
-    <!-- Commenting out read less button until functionality is working correctly -->
-    <!-- <a href="#" class="readLess">Read less</a> -->
-    <hr>
-    </article>
-  </script>
-
 </head>
 
 <body>
@@ -35,21 +20,22 @@
   <header>
     <a href="index.html">
     <img class="logo-img" src="img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" /></a>
+
     <!-- <div class="header-wrapper"> -->
     <img class="hamburger" src="img/menu3-white.png" alt="">
     <img class="cross" src="img/cross-white.png" alt="">
     <!-- </div> -->
+
     <nav class="menu">
-      <!-- Commenting out nav links for now -->
-      <!-- <ul class="">
-        <a id="blogTab" href="#"><li class="tab" data-content="blogLi">Blog</li></a>
-        <a id="aboutTab" href="#"><li class="tab" data-content="aboutLi">Bio</li></a>
-      </ul> -->
+      <ul class="">
+        <a id="" href="new.html"><li class="tab" data-content="">New Entry</li></a>
+        <a id="" href="stats.html"><li class="tab" data-content="">Stats</li></a>
+      </ul>
     </nav>
   </header>
 
   <main class="container">
-    <section class=".one-half.column" id="blog">
+    <section class=".one-half.column" id="write">
       <h1> New blog entry</h1>
       <form action="#" id="new-form">
         <label>
@@ -72,43 +58,35 @@
         <label>
           <input type="checkbox" id="article-published"> Published
         </label>
-          <input id="submit-button" type="submit">
+          <input id="submit-button" type="submit" value="Add article to database">
       </form>
     </section>
     <hr>
 
-    <h1> New blog preview</h1>
     <section class=".one-half.column" id="preview">
-      <!--<article id="">
-      <h4 class="title"></h4>
-      <div class="info">
-        By <a href="" class="authorUrl"><span class="author"></span></a>, published today.<br />
-        Category: <span class="category"></span>
-      </div>
-      <span class="body"></span>
-      <a href="#" class="readMore">Read more</a>
-      Commenting out read less button until functionality is working correctly -->
-      <!-- <a href="#" class="readLess">Read less</a> -->
-      <!-- </article> -->
+    <h1 class="secondary"> New blog preview</h1>
+    <div id="app-preview"></div>
     </section>
-
     <section id="article-export">
-      <h1>JSON string</h1>
+      <h1 class="secondary">JSON string</h1>
       <label id="export-field" for="article-json" class="pull-right">
         <input type="text" readonly id="article-json">
       </label>
     </section>
+
   </main>
 
   <footer>
   </footer>
   <script src="scripts/util.js"></script>
-  <script src="scripts/articles.js"></script> -->
+  <script src="scripts/articles.js"></script>
   <script src="scripts/blog.js"></script>
   <script src="scripts/blogArticles.js"></script>
-  <script src="scripts/new.js"></script>
-  <!-- <script src="scripts/index.js"></script> -->
+  <script src="scripts/html5sql.js" charset="utf-8"></script>
+  <script src="scripts/webdb.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/new.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </body>

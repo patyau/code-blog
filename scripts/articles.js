@@ -7,16 +7,6 @@ function Article (opts) {
   this.body = opts.body || marked(this.markdown);
 }
 
-// Article.prototype.daysAgo = function() {
-//   var oneDay = 1000 * 60 * 60 * 24;
-//
-//   var currentDay = new Date();
-//   var publishDay = new Date(this.days);
-//
-//   var diffDays = currentDay - publishDay;
-//   return Math.round(diffDays/oneDay);
-// };
-
 Article.prototype.toHTML = function() {
   // Populating article content
   this.daysAgo =

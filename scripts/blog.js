@@ -35,10 +35,8 @@ blog.fetchJSON = function() {
 };
 
 blog.updateArticles = function(data) {
-  // console.log('getting the data');
   data.forEach(function(item) {
     var article = new Article(item);
-    // blog.articles.push(article);
     article.insertRecord();
   });
   blog.fetchFromDB();
@@ -52,24 +50,21 @@ blog.fetchFromDB = function(callback) {
     function (resultArray) {
       resultArray.forEach(function(ele) {
         blog.articles.push(new Article(ele));
-        // blog.articles.createFilters(ele);
       });
       blog.render();
-      // callback();
     }
   );
 };
-
 
 // blog.initArticles = function() {
 //   blog.render();
 // };
 
 blog.render = function() {
-  blog.articles.forEach(function(ele) {
+  blog.articles.forEach(function(ele, index) {
     blog.appendArticle(ele);
     blog.createFilters(ele);
-    blog.createArticleID(ele);
+    blog.createArticleID(index);
   });
 
 
@@ -77,9 +72,7 @@ blog.render = function() {
     hljs.highlightBlock(block);
   });
   blog.truncateArticles();
-  // this.createFilters();
   blog.filterArticles();
-  // blog.filterArticles();
 };
 
 blog.appendArticle = function(a) {
@@ -88,7 +81,6 @@ blog.appendArticle = function(a) {
 
 
 blog.createArticleID = function(index) {
-  // Setting unique ID for each article
   var $articleId = $('article').last();
   var setArticleId = 'article-' + (index + 1);
   $articleId.attr('id', setArticleId);
@@ -99,7 +91,6 @@ blog.filterArticles = function() {
     $('#authFilter').find('option:first').attr('selected', 'selected');
     $('main').find('article').show();
 
-    // console.log($(this).val());
     if($(this).val() !== 'none') {
       $('.category:not(:contains(' + $(this).val() + '))').parents('article').hide();
     }
@@ -109,7 +100,6 @@ blog.filterArticles = function() {
     $('#catFilter').find('option:first').attr('selected', 'selected');
     $('main').find('article').show();
 
-    // console.log($(this).val());
     if($(this).val() !== 'none') {
       $('.author:not(:contains(' + $(this).val() + '))').parents('article').hide();
     }
@@ -137,31 +127,77 @@ blog.createFilters = function(ele) {
 
 blog.truncateArticles = function() {
   $('article .body').children(':nth-child(n+5)').hide();
-  // $('main .readLess').hide();
-  $('main .readMore').on('click', function(event) {
-    event.preventDefault();
-    $(this).prev('article .body').children().show();
-    // $(this).parent().find('.body').show();
-    $(this).hide();
+  $('article .readLess').hide();
+  $('main .readMore').on('click', blog.handleReadMoreButton);
 
-    // $(this).find('.readLess').show();
-    console.log(this);
-  });
+  // Still trying to figure out how to write this function
   // $('main .readLess').on('click', function(event) {
-  //   blog.hideArticles();
+  //   event.preventDefault();
+    // $(x).prev('article .body').children(':nth-child(n+5)').hide();
   // });
 };
 
+blog.handleReadMoreButton = function(event) {
+  event.preventDefault();
+  $(this).prev('article .body').children().toggle();
+  // $(this).hide();
+  // $(this).siblings('.readLess').show();
+};
+
+blog.initNewArticlePage = function() {
+  $.get('templates/template.handlebars', function(data, message, xhr) {
+    Article.prototype.template = Handlebars.compile(data);
+  });
+  $('#preview').hide();
+  $('#article-export').hide();
+};
+
+blog.watchForm = function() {
+  $('#new-form').on('change', 'input, textarea', blog.buildPreview);
+};
+
+blog.buildPreview = function() {
+  $('#preview').show();
+  var article = blog.buildArticle();
+  $('#app-preview').html(article.toHTML());
+
+  $('code').each(function(i, block) {
+  hljs.highlightBlock(block);
+  });
+};
+
+blog.buildArticle = function() {
+  return new Article({
+    title: $('#article-title').val(),
+    category: $('#article-category').val(),
+    author: $('#article-author').val(),
+    authorUrl: $('#article-author-url').val(),
+    markdown: $('#article-body').val(),
+    publishedOn: new Date()
+  });
+};
+
+blog.exportJSON = function() {
+  $('#article-export').show();
+  var jsonString = '';
+  blog.articles.forEach(function(article) {
+    jsonString += JSON.stringify(article) + ",\n";
+  });
+  $('#article-json').val('[' + jsonString + ']');
+};
+
+blog.handleSubmitButton = function() {
+  $('#new-form').on('submit', function (e) {
+    e.preventDefault();
+    var article = blog.buildArticle()
+    article.insertRecord();
+    blog.exportJSON();
+  });
+};
 
 blog.newArticlePreview = function() {
   // var newEntry = {};
-  // newEntry.title = $('#article-title').val();
-  // newEntry.category = $('#article-category').val();
-  // newEntry.author = $('#article-author').val();
-  // newEntry.authorUrl = $('#article-author-url').val();
-  // newEntry.body = $('#article-body').val();
-  // newEntry.body = marked(newEntry.body);
-  // newEntry.publishedOn = new Date();
+
   //
   // var articleP = new Article(newEntry);
   //
@@ -189,9 +225,9 @@ blog.newArticlePreview = function() {
   //   publishedOn: newEntry.publishedOn,
   //   body: newEntry.body
   // };
-  // var jsonString = JSON.stringify(stringData);
-  // // console.log(jsonString);
-  // $('#article-json').val(jsonString);
+  var jsonString = JSON.stringify(stringData);
+  console.log(jsonString);
+  $('#article-json').val(jsonString);
   //
   // // calling truncate articles function
   // util.truncateArticles();
