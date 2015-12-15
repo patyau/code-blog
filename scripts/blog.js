@@ -73,6 +73,7 @@ blog.render = function() {
   });
   blog.truncateArticles();
   blog.filterArticles();
+  // blog.handleReadLessButton();
 };
 
 blog.appendArticle = function(a) {
@@ -140,9 +141,18 @@ blog.truncateArticles = function() {
 blog.handleReadMoreButton = function(event) {
   event.preventDefault();
   $(this).prev('article .body').children().toggle();
+  // $(this).text('READ LESS').attr("class", "less");
   // $(this).hide();
   // $(this).siblings('.readLess').show();
 };
+
+// blog.handleReadLessButton = function() {
+//   $('main .less').on('click', function(event) {
+//     event.preventDefault();
+//     console.log('clicked on the read less button');
+//     // $(this).text('READ MORE').attr("class", "readMore");
+//   });
+// };
 
 blog.initNewArticlePage = function() {
   $.get('templates/template.html', function(data, message, xhr) {
@@ -193,42 +203,4 @@ blog.handleSubmitButton = function() {
     article.insertRecord();
     blog.exportJSON();
   });
-};
-
-blog.newArticlePreview = function() {
-  // var newEntry = {};
-
-  //
-  // var articleP = new Article(newEntry);
-  //
-  // var source = $.get('#blogArticle').html();
-  // var template = Handlebars.compile(source);
-  // var html = template(articleP);
-  //
-  // $('#preview').append(html);
-  //
-  // // $('.title').append(titleTemp);
-  // // $('.author').append(authorTemp);
-  // // $('.authorUrl').attr('href',authorUrlTemp);
-  // // $('.category').append(categoryTemp);
-  // // $('.body').html(bodyTemp);
-  // $('pre code').each(function (i, block) {
-  //   hljs.highlightBlock(block);
-  // });
-  //
-  // // JSON data export feature
-  // var stringData = {
-  //   title: newEntry.title,
-  //   category: newEntry.category,
-  //   author: newEntry.author,
-  //   authorUrl: newEntry.authorUrl,
-  //   publishedOn: newEntry.publishedOn,
-  //   body: newEntry.body
-  // };
-  var jsonString = JSON.stringify(stringData);
-  console.log(jsonString);
-  $('#article-json').val(jsonString);
-  //
-  // // calling truncate articles function
-  // util.truncateArticles();
 };
