@@ -2,7 +2,7 @@ var blog = {};
 blog.articles = [];
 
 blog.loadArticles = function() {
-  $.get('templates/template.handlebars', function(data, message, xhr) {
+  $.get('templates/template.html', function(data, message, xhr) {
     Article.prototype.template = Handlebars.compile(data);
     $.ajax({
       type: 'HEAD',
@@ -145,7 +145,7 @@ blog.handleReadMoreButton = function(event) {
 };
 
 blog.initNewArticlePage = function() {
-  $.get('templates/template.handlebars', function(data, message, xhr) {
+  $.get('templates/template.html', function(data, message, xhr) {
     Article.prototype.template = Handlebars.compile(data);
   });
   $('#preview').hide();
@@ -162,7 +162,7 @@ blog.buildPreview = function() {
   $('#app-preview').html(article.toHTML());
 
   $('code').each(function(i, block) {
-  hljs.highlightBlock(block);
+    hljs.highlightBlock(block);
   });
 };
 
@@ -189,7 +189,7 @@ blog.exportJSON = function() {
 blog.handleSubmitButton = function() {
   $('#new-form').on('submit', function (e) {
     e.preventDefault();
-    var article = blog.buildArticle()
+    var article = blog.buildArticle();
     article.insertRecord();
     blog.exportJSON();
   });

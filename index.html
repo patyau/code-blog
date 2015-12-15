@@ -18,7 +18,7 @@
 <body>
 
   <header>
-    <a href="index.html">
+    <a href="/">
     <img class="logo-img" src="img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" /></a>
 
     <!-- <div class="header-wrapper"> -->
@@ -28,8 +28,8 @@
 
     <nav class="menu">
       <ul class="">
-        <a id="blogTab" href="#"><li class="tab" data-content="blogLi">Blog</li></a>
-        <a id="aboutTab" href="#"><li class="tab" data-content="aboutLi">Bio</li></a>
+        <a id="blogTab" href="/"><li class="tab" data-content="blogLi">Blog</li></a>
+        <a id="aboutTab" href="/bio"><li class="tab" data-content="aboutLi">Bio</li></a>
       </ul>
     </nav>
   </header>
@@ -77,6 +77,7 @@
 
   <footer>
   </footer>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/util.js"></script>
   <script src="scripts/articles.js"></script>
   <script src="scripts/blog.js"></script>
@@ -87,6 +88,14 @@
   <script src="scripts/index.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- Controller: -->
+  <script src="scripts/articlesController.js"></script>
+  <script src="scripts/bioController.js"></script>
+
+  <!-- Router: -->
+  <script src="scripts/router.js"></script>
+
 </body>
 
 </html>
