@@ -1,5 +1,6 @@
 function Article (opts) {
   Object.keys(opts).forEach(function(propName, index, keys) {
+    // console.log(keys);
     this[propName] = opts[propName];
   // on the next line 'this' is a context paramaeter so that the anonymous callback function knows to reference the instance of this article and not the window.
   },this);

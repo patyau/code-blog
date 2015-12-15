@@ -210,6 +210,14 @@ select {
   color: white;
 }
 
+.active {
+  color: white;
+}
+
+.menu ul li .inactive {
+  color: white;
+}
+
 @media all and (min-width: 620px) {
   header {
       margin: 0 auto 0 auto;
@@ -232,6 +240,7 @@ select {
     width: 30%;*/
     padding-top: 30px;
   }
+
   .menu ul {
     /*display: block;*/
     /*position: absolute;*/
@@ -294,4 +303,11 @@ select {
     float: left;
     display: inline;
   }
+  .menu ul li .active {
+    color: #46C0C6;
+  }
+  .menu ul li .inactive {
+    color: white;
+  }
+
 }

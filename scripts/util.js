@@ -1,17 +1,11 @@
 var util = {};
 
-util.handleMainNav = function() {
-  $('#about').hide();
-  $('#aboutTab').on('click', function(e) {
-    $('#blog').hide();
-    $('#about').show();
-  });
-  $('#blogTab').on('click', function(e) {
-    $('#about').hide();
-    $('#blog').show();
-  });
+util.getParameterByKey = function (key) {
+  //Return a value stored in a given key from browser query string.
+  var match = RegExp('[?&]' + key + '=([^&]*)').exec(window.location.search);
+  return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 };
 
 $(function() {
-  util.handleMainNav();
+  // util.handleMainNav();
 });
