@@ -218,6 +218,15 @@ select {
   color: white;
 }
 
+.avatar {
+  float: right;
+  width: 40%;
+  padding-left: 2.5em;
+  padding-bottom: 1em;
+  min-width: 180px;
+  max-width: 200px;
+}
+
 @media all and (min-width: 620px) {
   header {
       margin: 0 auto 0 auto;

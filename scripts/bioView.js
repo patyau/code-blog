@@ -1,5 +1,6 @@
 var bioView = {};
 bioView.repos = [];
+bioView.user;
 
 bioView.requestRepos = function(callback) {
   $.ajax({
@@ -7,9 +8,28 @@ bioView.requestRepos = function(callback) {
     url: 'https://api.github.com/users/patyau/repos?sort=updated',
     headers: { Authorization: 'token ' + githubToken }
   }).done(function(data) {
-    console.log(data);
+    // console.log(data);
     bioView.repos = data;
   }).done(callback);
+};
+
+bioView.requestUser = function(callback) {
+  $.ajax({
+    type: 'GET',
+    url: 'https://api.github.com/users/patyau',
+    headers: { Authorization: 'token ' + githubToken }
+  }).done(function(data) {
+    console.log(data);
+    bioView.user = data;
+  }).done(callback);
+  // console.log(bioView.user);
+};
+
+bioView.renderUserData = function() {
+  var avatar = $('<img>')
+    .attr('src', 'https://avatars.githubusercontent.com/u/14867317?v=3')
+    .attr('class', 'avatar');
+  $(avatar).prependTo('#bio-intro');
 };
 
 bioView.index = function() {
@@ -30,5 +50,6 @@ bioView.ui = function() {
   // do stuff
   $('#blog').hide();
   $('#about').show();
-  console.log('running bioView.ui');
+  $('#about ul').empty();
+  // console.log('running bioView.ui');
 };
