@@ -1,7 +1,6 @@
 var bioController = {};
 
 bioController.index = function() {
-  bioView.requestRepos(bioView.index);
-  bioView.requestUser(bioView.renderUserData);
-  console.log('clicked /bio');
+  bio.requestRepos(bioView.index);
+  bio.requestUser(bioView.renderUser);
 };

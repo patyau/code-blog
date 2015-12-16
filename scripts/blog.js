@@ -140,7 +140,7 @@ blog.truncateArticles = function() {
 
 blog.handleReadMoreButton = function(event) {
   event.preventDefault();
-  $(this).prev('article .body').children().toggle();
+  $(this).prev('article .body').children(':nth-child(n+5)').toggle();
   // $(this).text('READ LESS').attr("class", "less");
   // $(this).hide();
   // $(this).siblings('.readLess').show();
