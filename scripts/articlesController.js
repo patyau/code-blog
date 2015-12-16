@@ -6,6 +6,7 @@ articlesController.index = function() {
   $('#blog').show();
 };
 
-articlesController.single = function() {
-
+articlesController.byID = function(articleID) {
+  console.log(articleID);
+  // Article.find(articleID, articleView.byID);
 };

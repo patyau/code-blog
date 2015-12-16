@@ -5,13 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
-  <link rel="stylesheet" type="text/css" href="styles/skeleton.css">
-  <link rel="stylesheet" type="text/css" href="styles/index.css">
+  <link rel="stylesheet" type="text/css" href="/vendor/styles/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/vendor/styles/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="/styles/index.css">
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/default.min.css">
   <title>Pat Yau
   </title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
 </head>
 
@@ -19,7 +18,7 @@
 
   <header>
     <a href="/">
-    <img class="logo-img" src="img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" /></a>
+    <img class="logo-img" src="/img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" /></a>
 
     <!-- <div class="header-wrapper"> -->
     <img class="hamburger" src="img/menu3-white.png" alt="">
@@ -54,47 +53,46 @@
 
     <section id="about">
       <h1>Bio</h1>
-      <p>PAT NASTY is a true open format DJ, known for his ability to seamlessly switch between sounds, genres, crowds and venues. Using his expert song selection and mixing skills; his driving force while performing is to create a party vibe that captivates and compels his audience to dance and have a great time.</p>
+      <img class="avatar">
+      <p id="bio-intro">PAT NASTY is a true open format DJ, known for his ability to seamlessly switch between sounds, genres, crowds and venues. Using his expert song selection and mixing skills; his driving force while performing is to create a party vibe that captivates and compels his audience to dance and have a great time.</p>
       <p>PAT NASTY is a founding member of 'The Good Guys' crew, and he is also a DJ for Seattle radio station 'MOViN 92.5'. He's been DJing since 2008, and his style is heavily influenced by his roots in hip hop and turntablism.</p>
-      <p>
-        <ul>Residencies:
-          <li>FWD Wednesdays (Q Nightclub)</li>
-          <li>Juicy Fridays (The Baltic Room)</li>
-          <li>Encore Saturdays (Stage)</li>
-          <li>Reload Saturdays (Trinity)</li>
+      <p id="user-data"></p>
+      <h2>Pat's Dev Work:</h2>
+        <ul>
         </ul>
-      </p>
-      <p>
-        <ul>Social Media Links:
-          <li>facebook.com/PATNASTY206</li>
-          <li>soundcloud.com/PATNASTY</li>
-          <li>twitter.com/PATNASTY</li>
-          <li>instagram.com/DJPATNASTY</li>
-        </ul>
-      </p>
     </section>
   </main>
 
   <footer>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script src="scripts/util.js"></script>
-  <script src="scripts/articles.js"></script>
-  <script src="scripts/blog.js"></script>
-  <script src="scripts/blogArticles.js"></script>
-  <script src="scripts/html5sql.js" charset="utf-8"></script>
-  <script src="scripts/webdb.js"></script>
+  <script src="/vendor/scripts/html5sql.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
-  <script src="scripts/index.js"></script>
+  <script src="/scripts/index.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
+  <script src="/scripts/githubKeys.js"></script>
+  <script src="/scripts/util.js"></script>
+  <script src="/scripts/webdb.js"></script>
+  <script src="/scripts/blogArticles.js"></script>
+
+  <!-- Model: -->
+  <script src="/scripts/articles.js"></script>
+  <script src="/scripts/blog.js"></script>
+  <script src="/scripts/bio.js"></script>
+
+  <!-- View: -->
+  <script src="/scripts/articlesView.js"></script>
+  <script src="/scripts/bioView.js"></script>
+
   <!-- Controller: -->
-  <script src="scripts/articlesController.js"></script>
-  <script src="scripts/bioController.js"></script>
+  <script src="/scripts/articlesController.js"></script>
+  <script src="/scripts/bioController.js"></script>
 
   <!-- Router: -->
-  <script src="scripts/router.js"></script>
+  <script src="/scripts/router.js"></script>
 
 </body>
 
