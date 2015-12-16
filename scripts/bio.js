@@ -5,7 +5,7 @@ bio.user;
 bio.requestRepos = function(callback) {
   $.ajax({
     type: 'GET',
-    url: '/github.com/user/repos?sort=updated',
+    url: '/github/user/repos?sort=updated',
     success: function(data, message, xhr){
       bio.repos = data;
     }
@@ -15,7 +15,7 @@ bio.requestRepos = function(callback) {
 bio.requestUser = function(callback) {
   $.ajax({
     type: 'GET',
-    url: '/github.com/users/patyau',
+    url: '/github/users/patyau',
     success: function(data, message, xhr){
       // console.log(data);
       bio.user = data;
