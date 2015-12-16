@@ -17,7 +17,7 @@ bio.requestUser = function(callback) {
     type: 'GET',
     url: '/github.com/users/patyau',
     success: function(data, message, xhr){
-      console.log(data);
+      // console.log(data);
       bio.user = data;
     }
   }).done(callback);
