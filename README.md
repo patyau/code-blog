@@ -1,3 +1,38 @@
+Class-13_12-16-2015
+What I did today:
+- Deployed patnasty blog to heroku
+- added custom domain
+- updated font scales
+- added filter function to repo array that is displayed on bio page
+
+Blocking points:
+- Still need to refactor blog.js and articles.js into MVC pattern
+- Still need to implement individual article links
+
+______
+
+
+Class-12_12-16-2015
+What I did today:
+- set up ajax request for github user/repo data to render on bio padding-left
+- created bioview and controller files to render bio page
+
+Other notes:
+- used class blog code as guideline for bio page functionality
+
+______
+
+
+Class-11_12-16-2015
+What I did today:
+- added router and controllers to handle page navigation
+
+Other notes:
+- used class blog code as guideline for bio page functionality
+
+______
+
+
 Class-08_12-09-2015
 What I did today:
 - populated articles into sql db
