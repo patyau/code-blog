@@ -30,3 +30,15 @@ Article.prototype.insertRecord = function(callback) {
     }
   );
 };
+
+Article.findByCategory = function(category, callback) {
+  webDB.execute (
+    [
+      {
+        'sql': 'SELECT * FROM articles WHERE category = ?',
+        'data': [category]
+      }
+    ],
+    callback
+  );
+};
