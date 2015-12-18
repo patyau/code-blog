@@ -16,25 +16,26 @@ articlesController.template = function(ctx, next) {
   }
 };
 
-articlesController.byID = function(articleID) {
-  // console.log(articleID);
-  Article.find(articleID, articleView.byID);
-};
-
-articlesController.category = function(ctx, next) {
-  var categoryData = function(data) {
+articlesController.id = function(ctx, next) {
+  var idData = function(data) {
     ctx.articles = data;
     next();
   };
+  Article.findById(ctx.params.id, idData);
+};
+
+articlesController.category = function(ctx, next) {
+  var categoryData = function(articles) {
+    ctx.articles = articles;
+    next();
+  };
   Article.findByCategory(ctx.params.category, categoryData);
-  // console.log(categoryData);
 };
 
 articlesController.author = function(ctx, next) {
-  console.log(ctx);
+  // console.log(ctx);
 };
 
-articlesController.show = function(ctx, next) {
+articlesController.show = function(ctx) {
   articlesView.show(ctx.articles);
-  // console.log(next);
 };

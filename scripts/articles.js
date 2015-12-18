@@ -56,7 +56,7 @@ Article.loadAll = function(callback) {
   }
 };
 
-Article.findByID = function(id, callback) {
+Article.findById = function(id, callback) {
   webDB.execute (
     [
       {
@@ -64,12 +64,16 @@ Article.findByID = function(id, callback) {
         'data': [id]
       }
     ],
-    callback
+    function(rows) {
+      var articles = rows.map(function(row) {
+        return new Article(row);
+      });
+      callback(articles);
+    }
   );
 };
 
 Article.findByCategory = function(category, callback) {
-  // console.log(category);
   webDB.execute (
     [
       {
@@ -77,6 +81,11 @@ Article.findByCategory = function(category, callback) {
         'data': [category]
       }
     ],
-    callback
+    function(rows) {
+      var articles = rows.map(function(row) {
+        return new Article(row);
+      });
+      callback(articles);
+    }
   );
 };

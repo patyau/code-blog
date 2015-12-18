@@ -1,3 +1,13 @@
+Class-15_12-18-2015
+What I did today:
+- implemented individual article link and page route
+- fixed article body not showing when using category page route
+- added styling to article title links on hover
+
+
+______
+
+
 Class-14_12-17-2015
 What I did today:
 - added favicon
