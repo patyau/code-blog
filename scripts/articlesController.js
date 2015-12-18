@@ -8,9 +8,10 @@ articlesController.template = function(ctx, next) {
   if (articlesView.template) {
     next();
   } else {
-    $.get('templates/template.html', function(data, message, xhr) {
+    $.get('/templates/template.html', function(data, message, xhr) {
       articlesView.template = Handlebars.compile(data);
       next();
+      // console.log(data);
     });
   }
 };
@@ -22,11 +23,11 @@ articlesController.byID = function(articleID) {
 
 articlesController.category = function(ctx, next) {
   var categoryData = function(data) {
-    console.log('in categoryData callback');
-    console.log(data);
+    ctx.articles = data;
+    next();
   };
   Article.findByCategory(ctx.params.category, categoryData);
-  // console.log(ctx);
+  // console.log(categoryData);
 };
 
 articlesController.author = function(ctx, next) {
@@ -34,6 +35,6 @@ articlesController.author = function(ctx, next) {
 };
 
 articlesController.show = function(ctx, next) {
-  console.log('in show action');
-  console.log(ctx);
+  articlesView.show(ctx.articles);
+  // console.log(next);
 };

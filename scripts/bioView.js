@@ -27,6 +27,6 @@ bioView.renderUserData = function() {
 
 bioView.ui = function() {
   $('#blog').hide();
-  $('#about').show();
+  $('#about').fadeIn(1000);
   $('#about ul').empty();
 };

@@ -8,5 +8,6 @@ util.getParameterByKey = function (key) {
 
 $(function() {
   $('#blog').hide();
+  $('#about').hide();
   // util.handleMainNav();
 });

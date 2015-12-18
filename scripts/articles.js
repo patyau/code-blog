@@ -60,7 +60,7 @@ Article.findByID = function(id, callback) {
   webDB.execute (
     [
       {
-        'sql': 'SELECT * FROM articles WHERE id = ?',
+        'sql': 'SELECT * FROM articles WHERE id = ? ORDER BY publishedOn',
         'data': [id]
       }
     ],
@@ -69,21 +69,14 @@ Article.findByID = function(id, callback) {
 };
 
 Article.findByCategory = function(category, callback) {
+  // console.log(category);
   webDB.execute (
     [
       {
-        'sql': 'SELECT * FROM articles WHERE category = ?',
+        'sql': 'SELECT * FROM articles WHERE category = ? ORDER BY publishedOn DESC',
         'data': [category]
       }
     ],
     callback
   );
 };
-
-// Article.prototype.toHTML = function() {
-//   // Populating article content
-//   this.daysAgo =
-//     parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-//
-//   return this.template(this);
-// };

@@ -3,6 +3,16 @@ What I did today:
 - added favicon
 - updated gitignore file
 - refactored article script into MVC architecture
+- refactored article preview and menu drop down filter functionality
+- added new page route for article categories
+
+Blocking points:
+- When on the page route for categories the article body is not showing
+- Still need to implement individual article links
+- Still need to implement SMACCS
+
+Other Notes:
+- used class blog code as guideline for refactoring into MVC architecture and implementing category route functionality
 
 ______
 

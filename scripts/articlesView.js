@@ -8,16 +8,18 @@ articlesView.render = function(article) {
 };
 
 articlesView.renderGroup = function(articleList) {
+  // $('#about').hide();
   $('#about').hide();
 
+
   $('#app')
+    .empty()
     .append(
       articleList.map ( function(a) {
         articlesView.createFilters(a);
         return articlesView.render(a);
       })
-    );
-
+    )
   $('pre code').each(function(i, block) {
     hljs.highlightBlock(block);
   });
@@ -29,6 +31,11 @@ articlesView.renderGroup = function(articleList) {
 
 articlesView.index = function() {
   articlesView.renderGroup(Article.all);
+};
+
+articlesView.show = function(articles) {
+  articlesView.renderGroup(articles);
+  console.log(articles);
 };
 
 articlesView.truncateArticles = function() {
