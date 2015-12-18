@@ -8,13 +8,7 @@ function Article (opts) {
   this.body = opts.body || marked(this.markdown);
 }
 
-Article.prototype.toHTML = function() {
-  // Populating article content
-  this.daysAgo =
-    parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-
-  return this.template(this);
-};
+Article.all = [];
 
 Article.prototype.insertRecord = function(callback) {
   // insert article record into database
@@ -25,9 +19,52 @@ Article.prototype.insertRecord = function(callback) {
         'data': [this.title, this.author, this.authorUrl, this.category, this.publishedOn, this.body],
       }
     ],
-    function() {
-      console.log('successfully inserted record');
-    }
+      callback
+  );
+};
+
+Article.requestAll = function(callback) {
+  $.getJSON('/scripts/hackerIpsum.json', function (data) {
+    data.forEach(function(item) {
+      var article = new Article(item);
+      article.insertRecord();
+      Article.all.push(article);
+    });
+    callback();
+  });
+};
+
+Article.loadAll = function(callback) {
+  var callback = callback || function() {};
+
+  if (Article.all.length === 0) {
+    webDB.execute(
+      'SELECT * FROM articles ORDER BY publishedOn DESC;',
+      function (rows) {
+        if (rows.length === 0) {
+          Article.requestAll(callback);
+        } else {
+          rows.forEach(function(row) {
+            Article.all.push(new Article(row));
+          });
+          callback();
+        }
+      }
+    );
+  } else {
+    callback();
+  }
+};
+
+Article.findByID = function(id, callback) {
+  webDB.execute (
+    [
+      {
+        'sql': 'SELECT * FROM articles WHERE id = ?',
+        'data': [id]
+      }
+    ],
+    callback
   );
 };
 
@@ -42,3 +79,11 @@ Article.findByCategory = function(category, callback) {
     callback
   );
 };
+
+// Article.prototype.toHTML = function() {
+//   // Populating article content
+//   this.daysAgo =
+//     parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+//
+//   return this.template(this);
+// };

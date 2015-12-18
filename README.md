@@ -1,7 +1,16 @@
+Class-14_12-17-2015
+What I did today:
+- added favicon
+- updated gitignore file
+- refactored article script into MVC architecture
+
+______
+
+
 Class-13_12-16-2015
 What I did today:
 - Deployed patnasty blog to heroku
-- added custom domain
+- added custom domain (www.patnasty.com)
 - updated font scales
 - added filter function to repo array that is displayed on bio page
 
@@ -12,7 +21,7 @@ Blocking points:
 ______
 
 
-Class-12_12-16-2015
+Class-12_12-15-2015
 What I did today:
 - set up ajax request for github user/repo data to render on bio padding-left
 - created bioview and controller files to render bio page
@@ -23,7 +32,7 @@ Other notes:
 ______
 
 
-Class-11_12-16-2015
+Class-11_12-14-2015
 What I did today:
 - added router and controllers to handle page navigation
 

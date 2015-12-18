@@ -7,5 +7,6 @@ util.getParameterByKey = function (key) {
 };
 
 $(function() {
+  $('#blog').hide();
   // util.handleMainNav();
 });

@@ -1,9 +1,18 @@
 var articlesController = {};
 
 articlesController.index = function() {
-  blog.loadArticles();
-  $('#about').hide();
-  $('#blog').show();
+  Article.loadAll(articlesView.index);
+};
+
+articlesController.template = function(ctx, next) {
+  if (articlesView.template) {
+    next();
+  } else {
+    $.get('templates/template.html', function(data, message, xhr) {
+      articlesView.template = Handlebars.compile(data);
+      next();
+    });
+  }
 };
 
 articlesController.byID = function(articleID) {
