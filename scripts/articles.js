@@ -89,3 +89,20 @@ Article.findByCategory = function(category, callback) {
     }
   );
 };
+
+Article.findByAuthor = function(author, callback) {
+  webDB.execute (
+    [
+      {
+        'sql': 'SELECT * FROM articles WHERE author LIKE ? ORDER BY publishedOn DESC',
+        'data': ['%' + author + '%']
+      }
+    ],
+    function(rows) {
+      var articles = rows.map(function(row) {
+        return new Article(row);
+      });
+      callback(articles);
+    }
+  );
+};
