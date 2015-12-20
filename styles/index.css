@@ -10,6 +10,12 @@ a {
   color: #4680c6;
 }
 
+.article-title-link:hover {
+  text-decoration: underline;
+  color: #313539;
+  border-bottom: 1px red;
+}
+
 p {
   font-size: 1em;
 }
@@ -103,6 +109,7 @@ h2 {
   /*font-style: oblique;*/
   /*margin-top: -10px;*/
   margin-bottom: 10px;
+  font-size: .707em;
 }
 
 form {

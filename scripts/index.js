@@ -14,13 +14,11 @@ $('.cross').click(function() {
 
 $('header').on('click', 'a', function() {
   $('.menu a').each(function() {
-    $(this).attr("class", "inactive");
+    $(this).attr('class', 'inactive');
   });
-  $(this).attr("class", "active");
+  $(this).attr('class', 'active');
 });
 
 $(function() {
   webDB.init();
-  // util.handleMainNav();
-  // blog.loadArticles();
 });

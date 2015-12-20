@@ -1,16 +1,38 @@
-page('/', articlesController.index);
-page('/index', articlesController.index);
-page('/articles', articlesController.index);
+page('/',
+  articlesController.template,
+  articlesController.index
+);
 
-// page('/articles/category/:category', articlesController.category, articlesController.show);
-// page('/articles/author/:author', articlesController.author);
+page('/index',
+  articlesController.template,
+  articlesController.index
+);
 
-page('/articles/id/:id', function(id) {
-  var articleID = id.params.id;
-  console.log(articleID);
-  articlesController.byID(articleID);
-});
+page('/articles',
+  articlesController.template,
+  articlesController.index
+);
 
-page('/bio', bioController.index);
+page('/articles/id/:id',
+  articlesController.template,
+  articlesController.id,
+  articlesController.show
+);
+
+page('/articles/category/:category',
+  articlesController.template,
+  articlesController.category,
+  articlesController.show
+);
+
+page('/articles/author/:author',
+  articlesController.template,
+  articlesController.author,
+  articlesController.show
+);
+
+page('/bio',
+  bioController.index
+);
 
 page.start();

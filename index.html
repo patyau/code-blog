@@ -11,7 +11,14 @@
   <link rel="shortcut icon" type="image/x-icon" href="/img/PATNASTY.ico" />
   <title>PAT NASTY
   </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="/vendor/scripts/html5sql.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+  <script>$('#about').hide();</script>
 </head>
 
 <body>
@@ -21,8 +28,8 @@
     <img class="logo-img" src="/img/PATNASTY_WHITE-BLUE-WATER-MAIN-75px.png" /></a>
 
     <!-- <div class="header-wrapper"> -->
-    <img class="hamburger" src="img/menu3-white.png" alt="">
-    <img class="cross" src="img/cross-white.png" alt="">
+    <img class="hamburger" src="/img/menu3-white.png" alt="">
+    <img class="cross" src="/img/cross-white.png" alt="">
     <!-- </div> -->
 
     <nav class="menu">
@@ -36,16 +43,18 @@
   <main class="container">
     <section id="blog">
       <h1>Blog</h1>
-      <form id="authFilter">
-        <select id="authSelect">
-          <option class="authMenuItem" value="none">All authors</option>
-        </select>
-      </form>
-      <form id="catFilter">
-        <select id="catSelect">
-          <option class="catMenuItem" value="none">All categories</option>
-        </select>
-      </form>
+      <section id="dropdowns">
+        <form id="authFilter">
+          <select id="authSelect">
+            <option class="authMenuItem" value="none">All authors</option>
+          </select>
+        </form>
+        <form id="catFilter">
+          <select id="catSelect">
+            <option class="catMenuItem" value="none">All categories</option>
+          </select>
+        </form>
+      </section>
     <hr>
     <div id="app">
     </div>
@@ -65,21 +74,13 @@
 
   <footer>
   </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script src="/vendor/scripts/html5sql.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
   <script src="/scripts/index.js"></script>
   <script src="/scripts/util.js"></script>
   <script src="/scripts/webdb.js"></script>
-  <script src="/scripts/blogArticles.js"></script>
+  <!-- <script src="/scripts/blogArticles.js"></script> -->
 
   <!-- Model: -->
   <script src="/scripts/articles.js"></script>
-  <script src="/scripts/blog.js"></script>
   <script src="/scripts/bio.js"></script>
 
   <!-- View: -->

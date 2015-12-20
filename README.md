@@ -1,7 +1,36 @@
+Class-15_12-18-2015
+What I did today:
+- implemented individual article link and page route
+- fixed article body not showing when using category page route
+- added styling to article title links on hover
+- added routing functionality to category drop down menu
+
+______
+
+
+Class-14_12-17-2015
+What I did today:
+- added favicon
+- updated gitignore file
+- refactored article script into MVC architecture
+- refactored article preview and menu drop down filter functionality
+- added new page route for article categories
+
+Blocking points:
+- When on the page route for categories the article body is not showing
+- Still need to implement individual article links
+- Still need to implement SMACCS
+
+Other Notes:
+- used class blog code as guideline for refactoring into MVC architecture and implementing category route functionality
+
+______
+
+
 Class-13_12-16-2015
 What I did today:
 - Deployed patnasty blog to heroku
-- added custom domain
+- added custom domain (www.patnasty.com)
 - updated font scales
 - added filter function to repo array that is displayed on bio page
 
@@ -12,7 +41,7 @@ Blocking points:
 ______
 
 
-Class-12_12-16-2015
+Class-12_12-15-2015
 What I did today:
 - set up ajax request for github user/repo data to render on bio padding-left
 - created bioview and controller files to render bio page
@@ -23,7 +52,7 @@ Other notes:
 ______
 
 
-Class-11_12-16-2015
+Class-11_12-14-2015
 What I did today:
 - added router and controllers to handle page navigation
 

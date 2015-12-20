@@ -71,7 +71,7 @@ blog.render = function() {
   $('pre code').each(function(i, block) {
     hljs.highlightBlock(block);
   });
-  blog.truncateArticles();
+  blog.setArticleTeasers();
   blog.filterArticles();
   // blog.handleReadLessButton();
 };
@@ -126,7 +126,7 @@ blog.createFilters = function(ele) {
   }
 };
 
-blog.truncateArticles = function() {
+blog.setArticleTeasers = function() {
   $('article .body').children(':nth-child(n+5)').hide();
   $('article .readLess').hide();
   $('main .readMore').on('click', blog.handleReadMoreButton);
