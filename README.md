@@ -3,7 +3,7 @@ What I did today:
 - implemented individual article link and page route
 - fixed article body not showing when using category page route
 - added styling to article title links on hover
-
+- added routing functionality to category drop down menu
 
 ______
 
